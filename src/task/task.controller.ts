@@ -6,8 +6,9 @@ import {
   Param,
   Put,
   Delete,
-  UsePipes,
-  ValidationPipe,
+  HttpException,
+  HttpStatus,
+  BadRequestException,
 } from '@nestjs/common';
 import { Validate } from 'class-validator';
 
@@ -20,7 +21,12 @@ export class TaskController {
 
   @Post()
   create(@Body() taskDTO: TaskDTO) {
-    return this.taskService.create(taskDTO);
+    //throw new BadRequestException('Error de peticion');
+    //throw new HttpException('Error de peticion', HttpStatus.BAD_REQUEST);
+    return new Promise((resolve, reject) => {
+      setTimeout(() => reject('Error en peticion'), 2000);
+    });
+    //return this.taskService.create(taskDTO);
   }
 
   @Get()

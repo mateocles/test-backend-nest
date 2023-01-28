@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { TaskDTO } from './dto/task.dto';
 import { ITask } from './task.interface';
 import { v4 as uuidv4 } from 'uuid';
+import { rejects } from 'assert';
 
 @Injectable()
 export class TaskService {
