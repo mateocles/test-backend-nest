@@ -23,10 +23,13 @@ export class TaskController {
   create(@Body() taskDTO: TaskDTO) {
     //throw new BadRequestException('Error de peticion');
     //throw new HttpException('Error de peticion', HttpStatus.BAD_REQUEST);
-    return new Promise((resolve, reject) => {
-      setTimeout(() => reject('Error en peticion'), 2000);
-    });
+    // return new Promise((resolve, reject) => {
+    //   setTimeout(() => reject('Error en peticion'), 2000);
+    // });
     //return this.taskService.create(taskDTO);
+    return new Promise((resolve, reject) => {
+      setTimeout(() => reject('Error en peticion'), 1000);
+    });
   }
 
   @Get()
