@@ -26,10 +26,7 @@ export class TaskController {
     // return new Promise((resolve, reject) => {
     //   setTimeout(() => reject('Error en peticion'), 2000);
     // });
-    //return this.taskService.create(taskDTO);
-    return new Promise((resolve, reject) => {
-      setTimeout(() => reject('Error en peticion'), 1000);
-    });
+    return this.taskService.create(taskDTO);
   }
 
   @Get()
